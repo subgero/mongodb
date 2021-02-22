@@ -1,13 +1,17 @@
-version: "3.8"
+version: "3.3"
 services:
-mongodb:
-image : mongo
-container_name: mongodb
-environment:
-- PUID=1000
-- PGID=1000
-volumes:
-- /mtn/mongodb/database:/data/db
-ports:
-- 27017:27017
-restart: unless-stopped
+  mongodb:
+    image : mongo
+    container_name: mongodb
+    environment:
+#      - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+#      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/mongodb/database:/data/db
+    command:
+      - '--auth'
+    ports:
+      - 27017:27017
+    restart: unless-stopped
