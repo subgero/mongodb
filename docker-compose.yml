@@ -4,8 +4,13 @@ services:
     image : mongo:4.2.15
     container_name: mongodb
     environment:
+<<<<<<< HEAD
      - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+=======
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+>>>>>>> 16f0cef332e160eb0fbc50a151b9dcce9bd705fd
       - PUID=1000
       - PGID=1000
     volumes:
